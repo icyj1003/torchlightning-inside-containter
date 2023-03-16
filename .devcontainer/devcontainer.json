@@ -1,0 +1,17 @@
+{
+    "name": "torchlightning",
+    "image": "python:3.8-slim",
+
+    "runArgs": ["--gpus", "all"],
+
+    "workspaceMount": "source=${localWorkspaceFolder}/workspace,target=/workspace,type=bind",
+    "workspaceFolder": "/workspace",
+
+    "customizations": {
+        "vscode": {
+            "extensions": ["ms-python.python", "ms-python.black-formatter" , "njpwerner.autodocstring"]
+        }
+    },
+
+    "onCreateCommand": "pip install -r /workspace/requirements.txt"
+}
